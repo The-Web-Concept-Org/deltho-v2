@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background-color: whitesmoke;
+}
+
+::selection {
+  background-color: #027c56 !important;
+  color: white;
+}
+.accent-color {
+  accent-color: #027c56;
+}
+
+:root {
+  --primary-color: #e65a00;
+}
+.bg-primary {
+  background-color: var(--primary-color);
+}
+.text-primary {
+  color: var(--primary-color);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  --tw-ring-color: transparent !important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+.dataTables_length,
+.dataTables_filter,
+.dataTables_info,
+.dataTables_paginate {
+  margin: 20px;
+}
+.dataTables_info {
+  color: #acadae !important;
+}
+.dataTables_length select {
+  width: 60px;
+}
+
+.shadow-dark {
+  box-shadow: 0px 0px 10px 0px #00000040;
+}
+.shadow-med {
+  box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.07);
+}
+.rounded-2xl {
+  border-radius: 3rem;
+}
+table.dataTable {
+  overflow-x: hidden !important;
+}
+table.dataTable tbody th,
+table.dataTable tbody td {
+  padding: 18px 10px !important;
+  color: #323c47;
+}
+table.dataTable.no-footer {
+  border-bottom: 1px solid #e1e1e166;
+}
+.form-container {
+  height: 80vh;
+  width: 70vw;
+}
+
+.canvasjs-chart-credit {
+  display: none !important;
+}
+
+/* game card hover  */
+.game-card:hover .gc_heading {
+  color: white !important;
+}
+
+#lessonDate::-webkit-datetime-edit-text,
+#lessonDate::-webkit-datetime-edit-month-field,
+#lessonDate::-webkit-datetime-edit-day-field,
+#lessonDate::-webkit-datetime-edit-year-field {
+  color: gray;
+}
+
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  width: 16px !important;
+  height: 16px !important;
+  background: white !important;
+  cursor: pointer !important;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px !important;
+  height: 25px !important;
+  background: red !important;
+  cursor: pointer !important;
+}
+
+/* select 2  styling */
+
+.select2-results__option[aria-selected="true"] {
+  background-color: #027c56 !important;
+}
+
+.select2-container--default
+  .select2-selection--single
+  .select2-selection__rendered {
+  color: #444 !important;
+  line-height: 34px !important;
+  text-align: left !important;
+}
+
+.select2-container--default .select2-selection--single {
+  border: 1px solid #dee2e6 !important;
+  height: 36px !important;
+  border-radius: 0.375rem;
+}
+
+.select2-container--default .select2-selection--single:focus {
+  border: 2px solid #027c56 !important;
+}
+
+.select2-container--default
+  .select2-selection--single
+  .select2-selection__arrow {
+  top: 6px !important;
+}
+
+.dataTables_length label {
+  display: flex !important;
+  gap: 10px;
+  align-items: center;
+}

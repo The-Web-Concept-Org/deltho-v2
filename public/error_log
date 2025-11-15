@@ -1,0 +1,33 @@
+[02-Jul-2024 12:50:37 UTC] PHP Warning:  require(/home/freeiuse/thewebconcept/softwares/fiverr/dheltoloto/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/freeiuse/thewebconcept/softwares/fiverr/dheltoloto/public/index.php on line 34
+[02-Jul-2024 12:50:37 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/freeiuse/thewebconcept/softwares/fiverr/dheltoloto/public/../vendor/autoload.php' (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/freeiuse/thewebconcept/softwares/fiverr/dheltoloto/public/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/freeiuse/thewebconcept/softwares/fiverr/dheltoloto/public/index.php on line 34
+[22-Aug-2024 14:48:52 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.2.0". You are running 8.0.30. in /home/freeiuse/thewebconcept/softwares/fiverr/dheltoloto/vendor/composer/platform_check.php on line 24
+[31-Oct-2024 06:06:42 America/Guatemala] PHP Fatal error:  Can't use method return value in write context in /home/healihvb/deltho/app/Http/Controllers/WinnigController.php on line 401
+[31-Oct-2024 06:06:51 America/Guatemala] PHP Fatal error:  Can't use method return value in write context in /home/healihvb/deltho/app/Http/Controllers/WinnigController.php on line 401
+[31-Oct-2024 06:06:58 America/Guatemala] PHP Fatal error:  Can't use method return value in write context in /home/healihvb/deltho/app/Http/Controllers/WinnigController.php on line 401
+[19-May-2025 06:02:15 America/Guatemala] PHP Fatal error:  Trait "App\Http\Controllers\App\Models\User" not found in /home/freeiuse/thewebconcept/softwares/fiverr/dheltoloto/app/Http/Controllers/UserController.php on line 17
+[18-Jul-2025 01:49:24 America/Guatemala] PHP Fatal error:  Cannot redeclare App\Http\Controllers\DashboardController::adminDashboard() in /home/freeiuse/thewebconcept/softwares/fiverr/dheltoloto/app/Http/Controllers/DashboardController.php on line 462
+[22-Jul-2025 01:32:27 America/Guatemala] PHP Fatal error:  Cannot use empty array elements in arrays in /home/freeiuse/thewebconcept/softwares/fiverr/dheltoloto/app/Http/Controllers/DashboardController.php on line 749
+[22-Jul-2025 01:32:57 America/Guatemala] PHP Fatal error:  Cannot use empty array elements in arrays in /home/freeiuse/thewebconcept/softwares/fiverr/dheltoloto/app/Http/Controllers/DashboardController.php on line 749
+[22-Jul-2025 01:32:57 America/Guatemala] PHP Fatal error:  Cannot use empty array elements in arrays in /home/freeiuse/thewebconcept/softwares/fiverr/dheltoloto/app/Http/Controllers/DashboardController.php on line 749
+[22-Jul-2025 01:33:00 America/Guatemala] PHP Fatal error:  Cannot use empty array elements in arrays in /home/freeiuse/thewebconcept/softwares/fiverr/dheltoloto/app/Http/Controllers/DashboardController.php on line 749
+[22-Jul-2025 01:33:06 America/Guatemala] PHP Fatal error:  Cannot use empty array elements in arrays in /home/freeiuse/thewebconcept/softwares/fiverr/dheltoloto/app/Http/Controllers/DashboardController.php on line 749
+[22-Jul-2025 01:33:51 America/Guatemala] PHP Fatal error:  Cannot use empty array elements in arrays in /home/freeiuse/thewebconcept/softwares/fiverr/dheltoloto/app/Http/Controllers/DashboardController.php on line 749
+[22-Jul-2025 01:34:03 America/Guatemala] PHP Fatal error:  Cannot use empty array elements in arrays in /home/freeiuse/thewebconcept/softwares/fiverr/dheltoloto/app/Http/Controllers/DashboardController.php on line 749
+[22-Jul-2025 01:34:03 America/Guatemala] PHP Fatal error:  Cannot use empty array elements in arrays in /home/freeiuse/thewebconcept/softwares/fiverr/dheltoloto/app/Http/Controllers/DashboardController.php on line 749
+[22-Jul-2025 01:36:45 America/Guatemala] PHP Fatal error:  Cannot use empty array elements in arrays in /home/freeiuse/thewebconcept/softwares/fiverr/dheltoloto/app/Http/Controllers/DashboardController.php on line 749
+[07-Aug-2025 07:49:47 America/Guatemala] PHP Fatal error:  Trait "App\Http\Controllers\Carbon\Carbon" not found in /home/freeiuse/thewebconcept/softwares/fiverr/dheltoloto/app/Http/Controllers/SaleController.php on line 7
+[07-Aug-2025 07:49:53 America/Guatemala] PHP Fatal error:  Trait "App\Http\Controllers\Carbon\Carbon" not found in /home/freeiuse/thewebconcept/softwares/fiverr/dheltoloto/app/Http/Controllers/SaleController.php on line 7
+[07-Aug-2025 07:58:47 America/Guatemala] PHP Fatal error:  Trait "App\Http\Controllers\Carbon\Carbon" not found in /home/freeiuse/thewebconcept/softwares/fiverr/dheltoloto/app/Http/Controllers/SaleController.php on line 7
+[09-Sep-2025 01:36:10 America/Guatemala] PHP Fatal error:  Cannot use app\Models\User as User because the name is already in use in /home/freeiuse/thewebconcept/softwares/fiverr/dheltoloto/app/Http/Controllers/DashboardController.php on line 12
+[30-Oct-2025 03:30:29 America/Guatemala] PHP Fatal error:  Trait "App\Http\Controllers\Illuminate\Http\Request" not found in /home/deltho/delthov2/app/Http/Controllers/OrderController.php on line 18
+[30-Oct-2025 03:30:33 America/Guatemala] PHP Fatal error:  Trait "App\Http\Controllers\Illuminate\Http\Request" not found in /home/deltho/delthov2/app/Http/Controllers/OrderController.php on line 18
+[30-Oct-2025 03:30:42 America/Guatemala] PHP Fatal error:  Trait "App\Http\Controllers\Illuminate\Http\Request" not found in /home/deltho/delthov2/app/Http/Controllers/OrderController.php on line 18
+[30-Oct-2025 03:30:50 America/Guatemala] PHP Fatal error:  Trait "App\Http\Controllers\Illuminate\Http\Request" not found in /home/deltho/delthov2/app/Http/Controllers/OrderController.php on line 18
+[30-Oct-2025 03:31:25 America/Guatemala] PHP Fatal error:  Trait "App\Http\Controllers\Illuminate\Http\Request" not found in /home/deltho/delthov2/app/Http/Controllers/OrderController.php on line 18
+[30-Oct-2025 03:31:29 America/Guatemala] PHP Fatal error:  Trait "App\Http\Controllers\Illuminate\Http\Request" not found in /home/deltho/delthov2/app/Http/Controllers/OrderController.php on line 18
+[30-Oct-2025 03:31:33 America/Guatemala] PHP Fatal error:  Trait "App\Http\Controllers\Illuminate\Http\Request" not found in /home/deltho/delthov2/app/Http/Controllers/OrderController.php on line 18
+[30-Oct-2025 03:31:50 America/Guatemala] PHP Fatal error:  Trait "App\Http\Controllers\Illuminate\Http\Request" not found in /home/deltho/delthov2/app/Http/Controllers/OrderController.php on line 18
+[30-Oct-2025 03:32:36 America/Guatemala] PHP Fatal error:  Trait "App\Http\Controllers\Illuminate\Http\Request" not found in /home/deltho/delthov2/app/Http/Controllers/OrderController.php on line 18
