@@ -13,9 +13,5 @@ class Lottery extends Model
 
     protected $primaryKey = 'lot_id'; // Specify the primary key column name
 
-    protected $fillable = [
-
-
-    ];
-
+    protected $fillable = [];
 }
