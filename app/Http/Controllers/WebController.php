@@ -16,16 +16,16 @@ class WebController extends Controller
     public function dashboard()
     {
         $user = session('user_details');
-        if($user['user_role'] == 'superadmin'){
-        $users = User::where('user_role', 'admin')->where('user_id', '<>', $user['user_id'])->where('status', 1)->get();
-        }elseif($user['user_role'] == 'admin'){
-            $users = User::where(function($query) use ($user) {
-                    $query->where('user_role', 'manager')
-                          ->where('added_user_id', $user['user_id'])
-                          ->where('status', 1);
-                })->orWhere('user_id', $user['user_id'])
+        if ($user['user_role'] == 'superadmin') {
+            $users = User::where('user_role', 'admin')->where('user_id', '<>', $user['user_id'])->where('status', 1)->get();
+        } elseif ($user['user_role'] == 'admin') {
+            $users = User::where(function ($query) use ($user) {
+                $query->where('user_role', 'manager')
+                    ->where('added_user_id', $user['user_id'])
+                    ->where('status', 1);
+            })->orWhere('user_id', $user['user_id'])
                 ->get();
-        }elseif($user['user_role'] == 'manager'){
+        } elseif ($user['user_role'] == 'manager') {
             $users = User::where('user_id', $user['user_id'])->get();
         }
         $lotteries = Lottery::get();
@@ -75,10 +75,10 @@ class WebController extends Controller
         if ($userRole == 'superadmin' || $userRole == 'manager' || $userRole == 'admin') {
             if (!empty($managerIds) && !(count($managerIds) === 1 && $managerIds[0] == null)) {
                 // Filter out any null values from the array
-                $managerIds = array_filter($managerIds, function($id) {
+                $managerIds = array_filter($managerIds, function ($id) {
                     return !is_null($id);
                 });
-            
+
                 // Proceed only if there are valid manager IDs after filtering
                 if (!empty($managerIds)) {
                     foreach ($managerIds as $id) {
@@ -89,7 +89,7 @@ class WebController extends Controller
                             $sellerIds[] = $id;
                         }
                     }
-            
+
                     if (!empty($managerIdsFiltered)) {
                         $sellersFromManagers = DB::table('users')
                             ->whereIn('added_user_id', $managerIdsFiltered)
@@ -99,7 +99,7 @@ class WebController extends Controller
                         $sellerIds = array_merge($sellerIds, $sellersFromManagers);
                     }
                 }
-            }else{
+            } else {
                 $adminManagersAndSellers = DB::table('users')->where('added_user_id', $adminId)->where('status', 1)->pluck('user_id');
                 foreach ($adminManagersAndSellers as $id) {
                     $role = DB::table('users')->where('user_id', $id)->value('user_role');
@@ -323,7 +323,7 @@ class WebController extends Controller
                         'date' => $fromDate . ' - ' . $toDate,
                         'managerData' => [],
                     ];
-                    
+
                     $managername = User::where('user_id', $user->added_user_id)->first();
 
                     foreach ($lotteries as $lottery) {
@@ -335,7 +335,6 @@ class WebController extends Controller
                         $userData['winnings'] += $this->getWinnings($userId, $lotteryId, $fromDate, $toDate);
                         $userData['balance'] += (int) str_replace(',', '', $this->getBalance($userId, $lotteryId, $fromDate, $toDate, $user->commission));
                         $userData['winningNumbersTotal'] += $this->getWinningNumbersTotal($userId, $lotteryId, $fromDate, $toDate);
-                        
                     }
 
                     $orders = DB::table('orders')
@@ -396,7 +395,7 @@ class WebController extends Controller
                 }
             }
         }
-return response()->json(['success' => true, 'data' => $salesData],200);
+        return response()->json(['success' => true, 'data' => $salesData], 200);
         // return view('saleReport', ['data' => $salesData]);
     }
     // The private helper functions would remain the same as you provided earlier

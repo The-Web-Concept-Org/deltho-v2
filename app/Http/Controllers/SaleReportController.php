@@ -147,35 +147,35 @@ class SaleReportController extends Controller
         }
 
         // --- Sellers transactions ---
-$sellerTx = DB::table('transactions')
-    ->select(
-        'seller_id as user_id',
-        DB::raw("'seller' as user_type"),
-        DB::raw('DATE(transaction_add_date) as day'),
-        DB::raw("SUM(CASE WHEN transaction_remarks = 'Deposit to customer' THEN debit ELSE 0 END) as deposit_sum"),
-        DB::raw("SUM(CASE WHEN transaction_remarks = 'Withdraw from customer' THEN credit ELSE 0 END) as withdraw_sum"),
-        DB::raw("SUM(CASE WHEN transaction_remarks = 'commission' THEN credit ELSE 0 END) as commission_sum")
-    )
-    ->whereIn('seller_id', $sellerIds)
-    ->whereBetween('transaction_add_date', [$fromDateTime, $toDateTime])
-    ->groupBy('seller_id', DB::raw('DATE(transaction_add_date)'));
+        $sellerTx = DB::table('transactions')
+            ->select(
+                'seller_id as user_id',
+                DB::raw("'seller' as user_type"),
+                DB::raw('DATE(transaction_add_date) as day'),
+                DB::raw("SUM(CASE WHEN transaction_remarks = 'Deposit to customer' THEN debit ELSE 0 END) as deposit_sum"),
+                DB::raw("SUM(CASE WHEN transaction_remarks = 'Withdraw from customer' THEN credit ELSE 0 END) as withdraw_sum"),
+                DB::raw("SUM(CASE WHEN transaction_remarks = 'commission' THEN credit ELSE 0 END) as commission_sum")
+            )
+            ->whereIn('seller_id', $sellerIds)
+            ->whereBetween('transaction_add_date', [$fromDateTime, $toDateTime])
+            ->groupBy('seller_id', DB::raw('DATE(transaction_add_date)'));
 
-// --- Customers transactions ---
-$customerTx = DB::table('transactions')
-    ->select(
-        'customer_id as user_id',
-        DB::raw("'customer' as user_type"),
-        DB::raw('DATE(transaction_add_date) as day'),
-        DB::raw("SUM(CASE WHEN transaction_remarks = 'Deposit received' THEN credit ELSE 0 END) as deposit_sum"),
-        DB::raw("SUM(CASE WHEN transaction_remarks = 'Withdraw processed' THEN debit ELSE 0 END) as withdraw_sum"),
-        DB::raw("SUM(CASE WHEN transaction_remarks = 'commission' THEN credit ELSE 0 END) as commission_sum")
-    )
-    ->whereIn('customer_id', $sellerIds)
-    ->whereBetween('transaction_add_date', [$fromDateTime, $toDateTime])
-    ->groupBy('customer_id', DB::raw('DATE(transaction_add_date)'));
+        // --- Customers transactions ---
+        $customerTx = DB::table('transactions')
+            ->select(
+                'customer_id as user_id',
+                DB::raw("'customer' as user_type"),
+                DB::raw('DATE(transaction_add_date) as day'),
+                DB::raw("SUM(CASE WHEN transaction_remarks = 'Deposit received' THEN credit ELSE 0 END) as deposit_sum"),
+                DB::raw("SUM(CASE WHEN transaction_remarks = 'Withdraw processed' THEN debit ELSE 0 END) as withdraw_sum"),
+                DB::raw("SUM(CASE WHEN transaction_remarks = 'commission' THEN credit ELSE 0 END) as commission_sum")
+            )
+            ->whereIn('customer_id', $sellerIds)
+            ->whereBetween('transaction_add_date', [$fromDateTime, $toDateTime])
+            ->groupBy('customer_id', DB::raw('DATE(transaction_add_date)'));
 
-// --- Combine both results ---
-$txRows = $sellerTx->unionAll($customerTx)->get();
+        // --- Combine both results ---
+        $txRows = $sellerTx->unionAll($customerTx)->get();
 
 
         foreach ($txRows as $row) {
@@ -480,7 +480,7 @@ $txRows = $sellerTx->unionAll($customerTx)->get();
                     $userData['totalReceipts'] = $orderStats['count'];
                     $userData['orderTotalAmount'] = $orderStats['sum'];
                     $userData['advance'] = $advance;
-                    
+
                     // Store per-user data
                     $salesData[$username] = $userData;
 

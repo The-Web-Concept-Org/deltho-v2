@@ -58,51 +58,48 @@ class LoginController extends Controller
     }
 
     public function login(Request $request)
-{
-    try {
-        $request->validate([
-            'email' => 'required|email',
-            'password' => 'required',
-        ]);
+    {
+        try {
+            $request->validate([
+                'email' => 'required|email',
+                'password' => 'required',
+            ]);
 
-        $user = User::where('email', $request->email)->first();
+            $user = User::where('email', $request->email)->first();
 
-        if (!$user || md5($request->password) !== $user->password) {
-            return response()->json(['msg' => 'Invalid credentials', 'success' => false], 200);
+            if (!$user || md5($request->password) !== $user->password) {
+                return response()->json(['msg' => 'Invalid credentials', 'success' => false], 200);
+            }
+
+            if ($user->status !== '1' || $user->is_deleted == 1) {
+                return response()->json(['error' => 'User Not Active', 'success' => false, 'msg' => 'User Not Active'], 200);
+            }
+
+            // Clear previous sessions/tokens
+            if ($user->user_role == 'sller' || $user->user_role == 'customer') {
+                $user->tokens()->delete(); // 🚀 This ensures old logins are logged out
+            }
+
+            // Replace null with empty string for specific fields
+            $user->company_image = $user->company_image ?? '';
+            $user->company_header = $user->company_header ?? '';
+            $user->company_footer = $user->company_footer ?? '';
+
+            // Create new token
+            $token = $user->createToken('auth_token')->plainTextToken;
+
+            return response()->json([
+                'token' => $token,
+                'user' => $user,
+                'success' => true,
+                'msg' => 'User Login Successfully'
+            ], 200);
+        } catch (\Throwable $th) {
+            return response()->json([
+                'error' => 'Invalid credentials',
+                'success' => false,
+                'msg' => 'Invalid credentials'
+            ], 200);
         }
-
-        if ($user->status !== '1' || $user->is_deleted == 1) {
-            return response()->json(['error' => 'User Not Active', 'success' => false, 'msg' => 'User Not Active'], 200);
-        }
-
-        // Clear previous sessions/tokens
-        if($user->user_role == 'sller' || $user->user_role == 'customer')
-        {
-        $user->tokens()->delete(); // 🚀 This ensures old logins are logged out
-        }
-
-        // Replace null with empty string for specific fields
-        $user->company_image = $user->company_image ?? '';
-        $user->company_header = $user->company_header ?? '';
-        $user->company_footer = $user->company_footer ?? '';
-
-        // Create new token
-        $token = $user->createToken('auth_token')->plainTextToken;
-
-        return response()->json([
-            'token' => $token,
-            'user' => $user,
-            'success' => true,
-            'msg' => 'User Login Successfully'
-        ], 200);
-
-    } catch (\Throwable $th) {
-        return response()->json([
-            'error' => 'Invalid credentials',
-            'success' => false,
-            'msg' => 'Invalid credentials'
-        ], 200);
     }
-}
-
 }
