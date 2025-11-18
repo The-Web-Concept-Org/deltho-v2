@@ -267,18 +267,21 @@
 
             <div class="container">
                 <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
-                  <div class="col-xl-10">
-                    <div class="text-center">
-                      <h3>Call To Action</h3>
-                      <p>Our lottery sale system allows multiple companies to easily register, manage, and sell tickets. It
-                        offers role-based access, secure payments, and sales analytics, all in a user-friendly and secure
-                        platform.</p>
-                      <a class="cta-btn" target="_blank" href="https://api.whatsapp.com/send?phone=+1-(516)-787-6177&text=Hello..!">Call To
-                        Action</a>
+                    <div class="col-xl-10">
+                        <div class="text-center">
+                            <h3>Call To Action</h3>
+                            <p>Our lottery sale system allows multiple companies to easily register, manage, and sell
+                                tickets. It
+                                offers role-based access, secure payments, and sales analytics, all in a user-friendly
+                                and secure
+                                platform.</p>
+                            <a class="cta-btn" target="_blank"
+                                href="https://api.whatsapp.com/send?phone=+1-(516)-787-6177&text=Hello..!">Call To
+                                Action</a>
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
+            </div>
 
         </section>
 
@@ -334,58 +337,64 @@
                     </div><!-- End Google Maps -->
 
                     <div class="col-lg-6">
-            <form onsubmit="redirectToWhatsApp(event)" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="400">
-              <div class="row gy-4">
-                <div class="col-md-6">
-                  <input type="text" id="name" class="form-control" placeholder="Your Name" required>
-                </div>
-            
-                <div class="col-md-6">
-                  <input type="email" id="email" class="form-control" placeholder="Your Email" required>
-                </div>
-            
-                <div class="col-md-6">
-                  <input type="text" id="subject" class="form-control" placeholder="Subject" required>
-                </div>
-                
-                <div class="col-md-6">
-                  <input type="number" id="number" class="form-control" placeholder="Phone Number" required>
-                </div>
-            
-                <div class="col-md-12">
-                  <textarea id="message" class="form-control" rows="6" placeholder="Message" required></textarea>
-                </div>
-            
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-            
-                  <button type="submit">Send Message</button>
-                </div>
-              </div>
-            </form>
-            
-            <script>
-              function redirectToWhatsApp(event) {
-                event.preventDefault(); // Prevent the form from submitting normally
-            
+                        <form onsubmit="redirectToWhatsApp(event)" method="post" class="php-email-form"
+                            data-aos="fade-up" data-aos-delay="400">
+                            <div class="row gy-4">
+                                <div class="col-md-6">
+                                    <input type="text" id="name" class="form-control"
+                                        placeholder="Your Name" required>
+                                </div>
 
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                const subject = document.getElementById('subject').value;
-                const number = document.getElementById('number').value;
-                const message = document.getElementById('message').value;
-            
-               
-                const whatsappUrl = `https://api.whatsapp.com/send?phone=+1-(516)-787-6177&text=Name:%20${encodeURIComponent(name)}%0AEmail:%20${encodeURIComponent(email)}%0ASubject:%20${encodeURIComponent(subject)}%0APhone:%20${encodeURIComponent(number)}%0AMessage:%20${encodeURIComponent(message)}`;
-            
-                
-                window.location.href = whatsappUrl;
-              }
-            </script>
-                        
-          </div><!-- End Contact Form -->
+                                <div class="col-md-6">
+                                    <input type="email" id="email" class="form-control"
+                                        placeholder="Your Email" required>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <input type="text" id="subject" class="form-control" placeholder="Subject"
+                                        required>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <input type="number" id="number" class="form-control"
+                                        placeholder="Phone Number" required>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <textarea id="message" class="form-control" rows="6" placeholder="Message" required></textarea>
+                                </div>
+
+                                <div class="col-md-12 text-center">
+                                    <div class="loading">Loading</div>
+                                    <div class="error-message"></div>
+                                    <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                                    <button type="submit">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <script>
+                            function redirectToWhatsApp(event) {
+                                event.preventDefault(); // Prevent the form from submitting normally
+
+
+                                const name = document.getElementById('name').value;
+                                const email = document.getElementById('email').value;
+                                const subject = document.getElementById('subject').value;
+                                const number = document.getElementById('number').value;
+                                const message = document.getElementById('message').value;
+
+
+                                const whatsappUrl =
+                                    `https://api.whatsapp.com/send?phone=+1-(516)-787-6177&text=Name:%20${encodeURIComponent(name)}%0AEmail:%20${encodeURIComponent(email)}%0ASubject:%20${encodeURIComponent(subject)}%0APhone:%20${encodeURIComponent(number)}%0AMessage:%20${encodeURIComponent(message)}`;
+
+
+                                window.location.href = whatsappUrl;
+                            }
+                        </script>
+
+                    </div><!-- End Contact Form -->
 
                 </div>
 
